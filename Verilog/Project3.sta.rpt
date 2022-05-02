@@ -1,0 +1,1344 @@
+TimeQuest Timing Analyzer report for Project3
+Thu May 05 03:05:53 2016
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Slow 1200mV 85C Model Setup Summary
+  7. Slow 1200mV 85C Model Hold Summary
+  8. Slow 1200mV 85C Model Recovery Summary
+  9. Slow 1200mV 85C Model Removal Summary
+ 10. Slow 1200mV 85C Model Minimum Pulse Width
+ 11. Setup Times
+ 12. Hold Times
+ 13. Clock to Output Times
+ 14. Minimum Clock to Output Times
+ 15. Slow 1200mV 0C Model Fmax Summary
+ 16. Slow 1200mV 0C Model Setup Summary
+ 17. Slow 1200mV 0C Model Hold Summary
+ 18. Slow 1200mV 0C Model Recovery Summary
+ 19. Slow 1200mV 0C Model Removal Summary
+ 20. Slow 1200mV 0C Model Minimum Pulse Width
+ 21. Setup Times
+ 22. Hold Times
+ 23. Clock to Output Times
+ 24. Minimum Clock to Output Times
+ 25. Fast 1200mV 0C Model Setup Summary
+ 26. Fast 1200mV 0C Model Hold Summary
+ 27. Fast 1200mV 0C Model Recovery Summary
+ 28. Fast 1200mV 0C Model Removal Summary
+ 29. Fast 1200mV 0C Model Minimum Pulse Width
+ 30. Setup Times
+ 31. Hold Times
+ 32. Clock to Output Times
+ 33. Minimum Clock to Output Times
+ 34. Multicorner Timing Analysis Summary
+ 35. Setup Times
+ 36. Hold Times
+ 37. Clock to Output Times
+ 38. Minimum Clock to Output Times
+ 39. Board Trace Model Assignments
+ 40. Input Transition Times
+ 41. Slow Corner Signal Integrity Metrics
+ 42. Fast Corner Signal Integrity Metrics
+ 43. Setup Transfers
+ 44. Hold Transfers
+ 45. Report TCCS
+ 46. Report RSKM
+ 47. Unconstrained Paths
+ 48. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                    ;
++--------------------+-------------------------------------------------+
+; Quartus II Version ; Version 9.0 Build 132 02/25/2009 SJ Web Edition ;
+; Revision Name      ; Project3                                        ;
+; Device Family      ; Cyclone III                                     ;
+; Device Name        ; EP3C16F484C6                                    ;
+; Timing Models      ; Final                                           ;
+; Delay Model        ; Combined                                        ;
+; Rise/Fall Delays   ; Enabled                                         ;
++--------------------+-------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                         ;
++------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------+
+; Clock Name             ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                    ;
++------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------+
+; _100hz:clock|out_100hz ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { _100hz:clock|out_100hz } ;
+; clck50mzh              ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clck50mzh }              ;
+; pb                     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { pb }                     ;
++------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                                    ;
++------------+-----------------+------------------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name             ; Note                                                          ;
++------------+-----------------+------------------------+---------------------------------------------------------------+
+; 222.92 MHz ; 222.92 MHz      ; _100hz:clock|out_100hz ;                                                               ;
+; 347.71 MHz ; 250.0 MHz       ; clck50mzh              ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-------------------------------------------------+
+; Slow 1200mV 85C Model Setup Summary             ;
++------------------------+--------+---------------+
+; Clock                  ; Slack  ; End Point TNS ;
++------------------------+--------+---------------+
+; _100hz:clock|out_100hz ; -4.534 ; -133.105      ;
+; clck50mzh              ; -1.876 ; -31.757       ;
+; pb                     ; 0.085  ; 0.000         ;
++------------------------+--------+---------------+
+
+
++------------------------------------------------+
+; Slow 1200mV 85C Model Hold Summary             ;
++------------------------+-------+---------------+
+; Clock                  ; Slack ; End Point TNS ;
++------------------------+-------+---------------+
+; clck50mzh              ; 0.100 ; 0.000         ;
+; pb                     ; 0.132 ; 0.000         ;
+; _100hz:clock|out_100hz ; 0.360 ; 0.000         ;
++------------------------+-------+---------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width                                                                                      ;
++--------+--------------+----------------+-------+------------+------------------------+------------+----------------------------+
+; Slack  ; Actual Width ; Required Width ; CCPP  ; Type       ; Clock                  ; Clock Edge ; Target                     ;
++--------+--------------+----------------+-------+------------+------------------------+------------+----------------------------+
+; -3.000 ; 1.000        ; 4.000          ; 0.000 ; Port Rate  ; clck50mzh              ; Rise       ; clck50mzh                  ;
+; -3.000 ; 1.000        ; 4.000          ; 0.000 ; Port Rate  ; pb                     ; Rise       ; pb                         ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[0]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[10] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[11] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[12] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[13] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[14] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[15] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[16] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[17] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[1]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[2]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[3]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[4]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[5]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[6]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[7]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[8]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[9]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|out_100hz     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[0]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[10]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[11]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[12]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[13]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[14]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[15]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[16]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[17]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[18]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[19]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[1]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[20]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[21]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[22]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[23]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[24]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[25]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[26]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[27]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[28]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[29]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[2]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[30]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[31]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[3]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[4]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[5]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[6]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[7]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[8]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[9]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; led[9]~reg0                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[0]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[1]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[2]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[3]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[4]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[5]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[6]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[7]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[8]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[9]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[0]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[1]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[2]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[3]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[4]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[5]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[6]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[7]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[8]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[9]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[0]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[1]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[2]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[3]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[4]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[5]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[6]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[7]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[8]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[9]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; rst                        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[0]                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[10]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[11]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[12]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[13]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[14]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[15]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[1]                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[2]                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[3]                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[4]                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[5]                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[6]                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[7]                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[8]                 ;
++--------+--------------+----------------+-------+------------+------------------------+------------+----------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Setup Times                                                                              ;
++-----------+------------------------+-------+-------+------------+------------------------+
+; Data Port ; Clock Port             ; Rise  ; Fall  ; Clock Edge ; Clock Reference        ;
++-----------+------------------------+-------+-------+------------+------------------------+
+; pb        ; _100hz:clock|out_100hz ; 3.101 ; 3.256 ; Rise       ; _100hz:clock|out_100hz ;
+; pb2       ; _100hz:clock|out_100hz ; 3.693 ; 4.106 ; Rise       ; _100hz:clock|out_100hz ;
++-----------+------------------------+-------+-------+------------+------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Hold Times                                                                                 ;
++-----------+------------------------+--------+--------+------------+------------------------+
+; Data Port ; Clock Port             ; Rise   ; Fall   ; Clock Edge ; Clock Reference        ;
++-----------+------------------------+--------+--------+------------+------------------------+
+; pb        ; _100hz:clock|out_100hz ; -0.482 ; -0.725 ; Rise       ; _100hz:clock|out_100hz ;
+; pb2       ; _100hz:clock|out_100hz ; -3.079 ; -3.497 ; Rise       ; _100hz:clock|out_100hz ;
++-----------+------------------------+--------+--------+------------+------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                      ;
++-----------+------------------------+--------+--------+------------+------------------------+
+; Data Port ; Clock Port             ; Rise   ; Fall   ; Clock Edge ; Clock Reference        ;
++-----------+------------------------+--------+--------+------------+------------------------+
+; hled0[*]  ; _100hz:clock|out_100hz ; 15.912 ; 15.863 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[0] ; _100hz:clock|out_100hz ; 15.356 ; 15.322 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[1] ; _100hz:clock|out_100hz ; 15.328 ; 15.313 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[2] ; _100hz:clock|out_100hz ; 15.804 ; 15.801 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[3] ; _100hz:clock|out_100hz ; 15.843 ; 15.763 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[4] ; _100hz:clock|out_100hz ; 15.880 ; 15.801 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[5] ; _100hz:clock|out_100hz ; 15.912 ; 15.863 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[6] ; _100hz:clock|out_100hz ; 15.646 ; 15.663 ; Rise       ; _100hz:clock|out_100hz ;
+; hled1[*]  ; _100hz:clock|out_100hz ; 17.546 ; 17.632 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[0] ; _100hz:clock|out_100hz ; 17.108 ; 17.207 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[1] ; _100hz:clock|out_100hz ; 17.254 ; 17.149 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[2] ; _100hz:clock|out_100hz ; 17.437 ; 17.339 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[3] ; _100hz:clock|out_100hz ; 17.111 ; 17.212 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[4] ; _100hz:clock|out_100hz ; 17.120 ; 17.225 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[5] ; _100hz:clock|out_100hz ; 17.546 ; 17.632 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[6] ; _100hz:clock|out_100hz ; 17.434 ; 17.506 ; Rise       ; _100hz:clock|out_100hz ;
+; hled2[*]  ; _100hz:clock|out_100hz ; 17.084 ; 17.154 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[0] ; _100hz:clock|out_100hz ; 17.067 ; 17.110 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[1] ; _100hz:clock|out_100hz ; 16.899 ; 16.839 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[2] ; _100hz:clock|out_100hz ; 17.039 ; 16.960 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[3] ; _100hz:clock|out_100hz ; 17.008 ; 17.071 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[4] ; _100hz:clock|out_100hz ; 16.995 ; 17.078 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[5] ; _100hz:clock|out_100hz ; 16.972 ; 17.054 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[6] ; _100hz:clock|out_100hz ; 17.084 ; 17.154 ; Rise       ; _100hz:clock|out_100hz ;
+; hled3[*]  ; _100hz:clock|out_100hz ; 17.699 ; 17.820 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[0] ; _100hz:clock|out_100hz ; 17.343 ; 17.415 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[1] ; _100hz:clock|out_100hz ; 17.611 ; 17.597 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[2] ; _100hz:clock|out_100hz ; 17.419 ; 17.355 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[3] ; _100hz:clock|out_100hz ; 17.365 ; 17.434 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[4] ; _100hz:clock|out_100hz ; 17.697 ; 17.790 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[5] ; _100hz:clock|out_100hz ; 17.699 ; 17.820 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[6] ; _100hz:clock|out_100hz ; 17.657 ; 17.732 ; Rise       ; _100hz:clock|out_100hz ;
+; led[*]    ; _100hz:clock|out_100hz ; 6.107  ; 6.174  ; Rise       ; _100hz:clock|out_100hz ;
+;  led[9]   ; _100hz:clock|out_100hz ; 6.107  ; 6.174  ; Rise       ; _100hz:clock|out_100hz ;
++-----------+------------------------+--------+--------+------------+------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                            ;
++-----------+------------------------+-------+-------+------------+------------------------+
+; Data Port ; Clock Port             ; Rise  ; Fall  ; Clock Edge ; Clock Reference        ;
++-----------+------------------------+-------+-------+------------+------------------------+
+; hled0[*]  ; _100hz:clock|out_100hz ; 5.824 ; 5.747 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[0] ; _100hz:clock|out_100hz ; 5.829 ; 5.754 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[1] ; _100hz:clock|out_100hz ; 5.824 ; 5.747 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[2] ; _100hz:clock|out_100hz ; 6.376 ; 6.208 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[3] ; _100hz:clock|out_100hz ; 6.281 ; 6.196 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[4] ; _100hz:clock|out_100hz ; 6.312 ; 6.344 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[5] ; _100hz:clock|out_100hz ; 6.624 ; 6.614 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[6] ; _100hz:clock|out_100hz ; 6.345 ; 6.509 ; Rise       ; _100hz:clock|out_100hz ;
+; hled1[*]  ; _100hz:clock|out_100hz ; 6.256 ; 6.298 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[0] ; _100hz:clock|out_100hz ; 6.257 ; 6.336 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[1] ; _100hz:clock|out_100hz ; 6.375 ; 6.298 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[2] ; _100hz:clock|out_100hz ; 6.579 ; 6.494 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[3] ; _100hz:clock|out_100hz ; 6.256 ; 6.337 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[4] ; _100hz:clock|out_100hz ; 6.272 ; 6.346 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[5] ; _100hz:clock|out_100hz ; 6.676 ; 6.761 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[6] ; _100hz:clock|out_100hz ; 6.572 ; 6.652 ; Rise       ; _100hz:clock|out_100hz ;
+; hled2[*]  ; _100hz:clock|out_100hz ; 7.042 ; 6.991 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[0] ; _100hz:clock|out_100hz ; 7.209 ; 7.245 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[1] ; _100hz:clock|out_100hz ; 7.042 ; 6.991 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[2] ; _100hz:clock|out_100hz ; 7.197 ; 7.124 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[3] ; _100hz:clock|out_100hz ; 7.154 ; 7.208 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[4] ; _100hz:clock|out_100hz ; 7.158 ; 7.235 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[5] ; _100hz:clock|out_100hz ; 7.137 ; 7.213 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[6] ; _100hz:clock|out_100hz ; 7.242 ; 7.307 ; Rise       ; _100hz:clock|out_100hz ;
+; hled3[*]  ; _100hz:clock|out_100hz ; 7.620 ; 7.640 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[0] ; _100hz:clock|out_100hz ; 7.620 ; 7.674 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[1] ; _100hz:clock|out_100hz ; 7.905 ; 7.868 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[2] ; _100hz:clock|out_100hz ; 7.697 ; 7.640 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[3] ; _100hz:clock|out_100hz ; 7.644 ; 7.694 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[4] ; _100hz:clock|out_100hz ; 7.977 ; 8.036 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[5] ; _100hz:clock|out_100hz ; 7.963 ; 8.065 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[6] ; _100hz:clock|out_100hz ; 7.963 ; 8.020 ; Rise       ; _100hz:clock|out_100hz ;
+; led[*]    ; _100hz:clock|out_100hz ; 5.944 ; 6.009 ; Rise       ; _100hz:clock|out_100hz ;
+;  led[9]   ; _100hz:clock|out_100hz ; 5.944 ; 6.009 ; Rise       ; _100hz:clock|out_100hz ;
++-----------+------------------------+-------+-------+------------+------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                                     ;
++------------+-----------------+------------------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name             ; Note                                                          ;
++------------+-----------------+------------------------+---------------------------------------------------------------+
+; 246.67 MHz ; 246.67 MHz      ; _100hz:clock|out_100hz ;                                                               ;
+; 381.24 MHz ; 250.0 MHz       ; clck50mzh              ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-------------------------------------------------+
+; Slow 1200mV 0C Model Setup Summary              ;
++------------------------+--------+---------------+
+; Clock                  ; Slack  ; End Point TNS ;
++------------------------+--------+---------------+
+; _100hz:clock|out_100hz ; -4.065 ; -115.371      ;
+; clck50mzh              ; -1.623 ; -27.094       ;
+; pb                     ; 0.251  ; 0.000         ;
++------------------------+--------+---------------+
+
+
++------------------------------------------------+
+; Slow 1200mV 0C Model Hold Summary              ;
++------------------------+-------+---------------+
+; Clock                  ; Slack ; End Point TNS ;
++------------------------+-------+---------------+
+; pb                     ; 0.032 ; 0.000         ;
+; clck50mzh              ; 0.072 ; 0.000         ;
+; _100hz:clock|out_100hz ; 0.311 ; 0.000         ;
++------------------------+-------+---------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width                                                                                       ;
++--------+--------------+----------------+-------+------------+------------------------+------------+----------------------------+
+; Slack  ; Actual Width ; Required Width ; CCPP  ; Type       ; Clock                  ; Clock Edge ; Target                     ;
++--------+--------------+----------------+-------+------------+------------------------+------------+----------------------------+
+; -3.000 ; 1.000        ; 4.000          ; 0.000 ; Port Rate  ; clck50mzh              ; Rise       ; clck50mzh                  ;
+; -3.000 ; 1.000        ; 4.000          ; 0.000 ; Port Rate  ; pb                     ; Rise       ; pb                         ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[0]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[10] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[11] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[12] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[13] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[14] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[15] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[16] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[17] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[1]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[2]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[3]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[4]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[5]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[6]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[7]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[8]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[9]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|out_100hz     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[0]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[10]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[11]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[12]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[13]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[14]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[15]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[16]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[17]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[18]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[19]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[1]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[20]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[21]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[22]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[23]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[24]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[25]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[26]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[27]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[28]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[29]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[2]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[30]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[31]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[3]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[4]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[5]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[6]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[7]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[8]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[9]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; led[9]~reg0                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[0]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[1]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[2]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[3]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[4]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[5]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[6]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[7]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[8]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[9]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[0]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[1]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[2]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[3]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[4]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[5]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[6]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[7]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[8]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[9]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[0]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[1]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[2]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[3]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[4]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[5]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[6]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[7]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[8]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[9]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; rst                        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[0]                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[10]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[11]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[12]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[13]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[14]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[15]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[1]                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[2]                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[3]                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[4]                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[5]                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[6]                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[7]                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[8]                 ;
++--------+--------------+----------------+-------+------------+------------------------+------------+----------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Setup Times                                                                              ;
++-----------+------------------------+-------+-------+------------+------------------------+
+; Data Port ; Clock Port             ; Rise  ; Fall  ; Clock Edge ; Clock Reference        ;
++-----------+------------------------+-------+-------+------------+------------------------+
+; pb        ; _100hz:clock|out_100hz ; 2.930 ; 3.036 ; Rise       ; _100hz:clock|out_100hz ;
+; pb2       ; _100hz:clock|out_100hz ; 3.310 ; 3.637 ; Rise       ; _100hz:clock|out_100hz ;
++-----------+------------------------+-------+-------+------------+------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Hold Times                                                                                 ;
++-----------+------------------------+--------+--------+------------+------------------------+
+; Data Port ; Clock Port             ; Rise   ; Fall   ; Clock Edge ; Clock Reference        ;
++-----------+------------------------+--------+--------+------------+------------------------+
+; pb        ; _100hz:clock|out_100hz ; -0.541 ; -0.742 ; Rise       ; _100hz:clock|out_100hz ;
+; pb2       ; _100hz:clock|out_100hz ; -2.768 ; -3.095 ; Rise       ; _100hz:clock|out_100hz ;
++-----------+------------------------+--------+--------+------------+------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                      ;
++-----------+------------------------+--------+--------+------------+------------------------+
+; Data Port ; Clock Port             ; Rise   ; Fall   ; Clock Edge ; Clock Reference        ;
++-----------+------------------------+--------+--------+------------+------------------------+
+; hled0[*]  ; _100hz:clock|out_100hz ; 14.515 ; 14.439 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[0] ; _100hz:clock|out_100hz ; 14.027 ; 13.973 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[1] ; _100hz:clock|out_100hz ; 13.997 ; 13.964 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[2] ; _100hz:clock|out_100hz ; 14.444 ; 14.392 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[3] ; _100hz:clock|out_100hz ; 14.483 ; 14.357 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[4] ; _100hz:clock|out_100hz ; 14.515 ; 14.393 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[5] ; _100hz:clock|out_100hz ; 14.515 ; 14.439 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[6] ; _100hz:clock|out_100hz ; 14.248 ; 14.313 ; Rise       ; _100hz:clock|out_100hz ;
+; hled1[*]  ; _100hz:clock|out_100hz ; 15.979 ; 16.072 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[0] ; _100hz:clock|out_100hz ; 15.610 ; 15.673 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[1] ; _100hz:clock|out_100hz ; 15.716 ; 15.647 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[2] ; _100hz:clock|out_100hz ; 15.883 ; 15.816 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[3] ; _100hz:clock|out_100hz ; 15.613 ; 15.678 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[4] ; _100hz:clock|out_100hz ; 15.621 ; 15.690 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[5] ; _100hz:clock|out_100hz ; 15.979 ; 16.072 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[6] ; _100hz:clock|out_100hz ; 15.879 ; 15.953 ; Rise       ; _100hz:clock|out_100hz ;
+; hled2[*]  ; _100hz:clock|out_100hz ; 15.563 ; 15.662 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[0] ; _100hz:clock|out_100hz ; 15.528 ; 15.635 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[1] ; _100hz:clock|out_100hz ; 15.436 ; 15.331 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[2] ; _100hz:clock|out_100hz ; 15.563 ; 15.432 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[3] ; _100hz:clock|out_100hz ; 15.490 ; 15.595 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[4] ; _100hz:clock|out_100hz ; 15.490 ; 15.602 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[5] ; _100hz:clock|out_100hz ; 15.459 ; 15.587 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[6] ; _100hz:clock|out_100hz ; 15.559 ; 15.662 ; Rise       ; _100hz:clock|out_100hz ;
+; hled3[*]  ; _100hz:clock|out_100hz ; 16.156 ; 16.231 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[0] ; _100hz:clock|out_100hz ; 15.821 ; 15.879 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[1] ; _100hz:clock|out_100hz ; 16.107 ; 16.038 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[2] ; _100hz:clock|out_100hz ; 15.865 ; 15.832 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[3] ; _100hz:clock|out_100hz ; 15.840 ; 15.896 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[4] ; _100hz:clock|out_100hz ; 16.134 ; 16.203 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[5] ; _100hz:clock|out_100hz ; 16.156 ; 16.231 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[6] ; _100hz:clock|out_100hz ; 16.099 ; 16.149 ; Rise       ; _100hz:clock|out_100hz ;
+; led[*]    ; _100hz:clock|out_100hz ; 5.738  ; 5.763  ; Rise       ; _100hz:clock|out_100hz ;
+;  led[9]   ; _100hz:clock|out_100hz ; 5.738  ; 5.763  ; Rise       ; _100hz:clock|out_100hz ;
++-----------+------------------------+--------+--------+------------+------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                            ;
++-----------+------------------------+-------+-------+------------+------------------------+
+; Data Port ; Clock Port             ; Rise  ; Fall  ; Clock Edge ; Clock Reference        ;
++-----------+------------------------+-------+-------+------------+------------------------+
+; hled0[*]  ; _100hz:clock|out_100hz ; 5.459 ; 5.366 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[0] ; _100hz:clock|out_100hz ; 5.465 ; 5.373 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[1] ; _100hz:clock|out_100hz ; 5.459 ; 5.366 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[2] ; _100hz:clock|out_100hz ; 5.934 ; 5.771 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[3] ; _100hz:clock|out_100hz ; 5.886 ; 5.759 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[4] ; _100hz:clock|out_100hz ; 5.913 ; 5.856 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[5] ; _100hz:clock|out_100hz ; 6.199 ; 6.089 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[6] ; _100hz:clock|out_100hz ; 5.920 ; 6.022 ; Rise       ; _100hz:clock|out_100hz ;
+; hled1[*]  ; _100hz:clock|out_100hz ; 5.829 ; 5.866 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[0] ; _100hz:clock|out_100hz ; 5.829 ; 5.927 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[1] ; _100hz:clock|out_100hz ; 5.964 ; 5.866 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[2] ; _100hz:clock|out_100hz ; 6.144 ; 6.046 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[3] ; _100hz:clock|out_100hz ; 5.829 ; 5.928 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[4] ; _100hz:clock|out_100hz ; 5.849 ; 5.933 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[5] ; _100hz:clock|out_100hz ; 6.198 ; 6.311 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[6] ; _100hz:clock|out_100hz ; 6.105 ; 6.216 ; Rise       ; _100hz:clock|out_100hz ;
+; hled2[*]  ; _100hz:clock|out_100hz ; 6.563 ; 6.468 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[0] ; _100hz:clock|out_100hz ; 6.657 ; 6.754 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[1] ; _100hz:clock|out_100hz ; 6.563 ; 6.468 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[2] ; _100hz:clock|out_100hz ; 6.696 ; 6.573 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[3] ; _100hz:clock|out_100hz ; 6.624 ; 6.720 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[4] ; _100hz:clock|out_100hz ; 6.629 ; 6.733 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[5] ; _100hz:clock|out_100hz ; 6.599 ; 6.720 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[6] ; _100hz:clock|out_100hz ; 6.694 ; 6.790 ; Rise       ; _100hz:clock|out_100hz ;
+; hled3[*]  ; _100hz:clock|out_100hz ; 7.018 ; 7.036 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[0] ; _100hz:clock|out_100hz ; 7.018 ; 7.106 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[1] ; _100hz:clock|out_100hz ; 7.324 ; 7.249 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[2] ; _100hz:clock|out_100hz ; 7.128 ; 7.036 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[3] ; _100hz:clock|out_100hz ; 7.039 ; 7.126 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[4] ; _100hz:clock|out_100hz ; 7.380 ; 7.441 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[5] ; _100hz:clock|out_100hz ; 7.342 ; 7.467 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[6] ; _100hz:clock|out_100hz ; 7.363 ; 7.420 ; Rise       ; _100hz:clock|out_100hz ;
+; led[*]    ; _100hz:clock|out_100hz ; 5.591 ; 5.615 ; Rise       ; _100hz:clock|out_100hz ;
+;  led[9]   ; _100hz:clock|out_100hz ; 5.591 ; 5.615 ; Rise       ; _100hz:clock|out_100hz ;
++-----------+------------------------+-------+-------+------------+------------------------+
+
+
++-------------------------------------------------+
+; Fast 1200mV 0C Model Setup Summary              ;
++------------------------+--------+---------------+
+; Clock                  ; Slack  ; End Point TNS ;
++------------------------+--------+---------------+
+; _100hz:clock|out_100hz ; -2.122 ; -57.237       ;
+; clck50mzh              ; -0.589 ; -8.789        ;
+; pb                     ; 0.399  ; 0.000         ;
++------------------------+--------+---------------+
+
+
++------------------------------------------------+
+; Fast 1200mV 0C Model Hold Summary              ;
++------------------------+-------+---------------+
+; Clock                  ; Slack ; End Point TNS ;
++------------------------+-------+---------------+
+; clck50mzh              ; 0.037 ; 0.000         ;
+; pb                     ; 0.040 ; 0.000         ;
+; _100hz:clock|out_100hz ; 0.187 ; 0.000         ;
++------------------------+-------+---------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width                                                                                       ;
++--------+--------------+----------------+-------+------------+------------------------+------------+----------------------------+
+; Slack  ; Actual Width ; Required Width ; CCPP  ; Type       ; Clock                  ; Clock Edge ; Target                     ;
++--------+--------------+----------------+-------+------------+------------------------+------------+----------------------------+
+; -3.000 ; 1.000        ; 4.000          ; 0.000 ; Port Rate  ; clck50mzh              ; Rise       ; clck50mzh                  ;
+; -3.000 ; 1.000        ; 4.000          ; 0.000 ; Port Rate  ; pb                     ; Rise       ; pb                         ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[0]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[10] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[11] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[12] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[13] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[14] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[15] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[16] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[17] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[1]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[2]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[3]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[4]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[5]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[6]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[7]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[8]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|count_reg[9]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clck50mzh              ; Rise       ; _100hz:clock|out_100hz     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[0]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[10]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[11]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[12]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[13]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[14]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[15]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[16]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[17]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[18]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[19]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[1]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[20]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[21]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[22]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[23]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[24]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[25]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[26]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[27]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[28]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[29]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[2]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[30]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[31]               ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[3]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[4]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[5]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[6]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[7]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[8]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; count100[9]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; led[9]~reg0                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[0]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[1]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[2]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[3]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[4]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[5]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[6]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[7]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[8]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; ledc[9]                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[0]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[1]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[2]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[3]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[4]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[5]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[6]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[7]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[8]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; random:ran|d[9]            ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[0]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[1]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[2]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[3]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[4]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[5]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[6]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[7]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[8]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; pb                     ; Rise       ; rdm[9]                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; rst                        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[0]                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[10]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[11]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[12]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[13]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[14]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[15]                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[1]                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[2]                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[3]                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[4]                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[5]                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[6]                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[7]                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; _100hz:clock|out_100hz ; Rise       ; userlag[8]                 ;
++--------+--------------+----------------+-------+------------+------------------------+------------+----------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Setup Times                                                                              ;
++-----------+------------------------+-------+-------+------------+------------------------+
+; Data Port ; Clock Port             ; Rise  ; Fall  ; Clock Edge ; Clock Reference        ;
++-----------+------------------------+-------+-------+------------+------------------------+
+; pb        ; _100hz:clock|out_100hz ; 1.652 ; 2.135 ; Rise       ; _100hz:clock|out_100hz ;
+; pb2       ; _100hz:clock|out_100hz ; 2.092 ; 2.719 ; Rise       ; _100hz:clock|out_100hz ;
++-----------+------------------------+-------+-------+------------+------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Hold Times                                                                                 ;
++-----------+------------------------+--------+--------+------------+------------------------+
+; Data Port ; Clock Port             ; Rise   ; Fall   ; Clock Edge ; Clock Reference        ;
++-----------+------------------------+--------+--------+------------+------------------------+
+; pb        ; _100hz:clock|out_100hz ; -0.201 ; -0.693 ; Rise       ; _100hz:clock|out_100hz ;
+; pb2       ; _100hz:clock|out_100hz ; -1.742 ; -2.367 ; Rise       ; _100hz:clock|out_100hz ;
++-----------+------------------------+--------+--------+------------+------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                      ;
++-----------+------------------------+--------+--------+------------+------------------------+
+; Data Port ; Clock Port             ; Rise   ; Fall   ; Clock Edge ; Clock Reference        ;
++-----------+------------------------+--------+--------+------------+------------------------+
+; hled0[*]  ; _100hz:clock|out_100hz ; 9.354  ; 9.384  ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[0] ; _100hz:clock|out_100hz ; 9.032  ; 9.057  ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[1] ; _100hz:clock|out_100hz ; 9.011  ; 9.054  ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[2] ; _100hz:clock|out_100hz ; 9.279  ; 9.352  ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[3] ; _100hz:clock|out_100hz ; 9.307  ; 9.335  ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[4] ; _100hz:clock|out_100hz ; 9.325  ; 9.352  ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[5] ; _100hz:clock|out_100hz ; 9.354  ; 9.384  ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[6] ; _100hz:clock|out_100hz ; 9.257  ; 9.225  ; Rise       ; _100hz:clock|out_100hz ;
+; hled1[*]  ; _100hz:clock|out_100hz ; 10.303 ; 10.288 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[0] ; _100hz:clock|out_100hz ; 10.011 ; 10.062 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[1] ; _100hz:clock|out_100hz ; 10.088 ; 10.060 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[2] ; _100hz:clock|out_100hz ; 10.174 ; 10.131 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[3] ; _100hz:clock|out_100hz ; 10.035 ; 10.065 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[4] ; _100hz:clock|out_100hz ; 9.989  ; 10.076 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[5] ; _100hz:clock|out_100hz ; 10.303 ; 10.288 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[6] ; _100hz:clock|out_100hz ; 10.230 ; 10.219 ; Rise       ; _100hz:clock|out_100hz ;
+; hled2[*]  ; _100hz:clock|out_100hz ; 10.041 ; 9.987  ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[0] ; _100hz:clock|out_100hz ; 10.028 ; 9.972  ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[1] ; _100hz:clock|out_100hz ; 9.839  ; 9.887  ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[2] ; _100hz:clock|out_100hz ; 9.927  ; 9.970  ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[3] ; _100hz:clock|out_100hz ; 10.002 ; 9.950  ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[4] ; _100hz:clock|out_100hz ; 9.982  ; 9.966  ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[5] ; _100hz:clock|out_100hz ; 9.998  ; 9.956  ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[6] ; _100hz:clock|out_100hz ; 10.041 ; 9.987  ; Rise       ; _100hz:clock|out_100hz ;
+; hled3[*]  ; _100hz:clock|out_100hz ; 10.350 ; 10.409 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[0] ; _100hz:clock|out_100hz ; 10.218 ; 10.213 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[1] ; _100hz:clock|out_100hz ; 10.321 ; 10.374 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[2] ; _100hz:clock|out_100hz ; 10.220 ; 10.141 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[3] ; _100hz:clock|out_100hz ; 10.236 ; 10.228 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[4] ; _100hz:clock|out_100hz ; 10.342 ; 10.403 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[5] ; _100hz:clock|out_100hz ; 10.350 ; 10.409 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[6] ; _100hz:clock|out_100hz ; 10.315 ; 10.365 ; Rise       ; _100hz:clock|out_100hz ;
+; led[*]    ; _100hz:clock|out_100hz ; 3.699  ; 3.824  ; Rise       ; _100hz:clock|out_100hz ;
+;  led[9]   ; _100hz:clock|out_100hz ; 3.699  ; 3.824  ; Rise       ; _100hz:clock|out_100hz ;
++-----------+------------------------+--------+--------+------------+------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                            ;
++-----------+------------------------+-------+-------+------------+------------------------+
+; Data Port ; Clock Port             ; Rise  ; Fall  ; Clock Edge ; Clock Reference        ;
++-----------+------------------------+-------+-------+------------+------------------------+
+; hled0[*]  ; _100hz:clock|out_100hz ; 3.437 ; 3.443 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[0] ; _100hz:clock|out_100hz ; 3.441 ; 3.447 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[1] ; _100hz:clock|out_100hz ; 3.437 ; 3.443 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[2] ; _100hz:clock|out_100hz ; 3.764 ; 3.726 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[3] ; _100hz:clock|out_100hz ; 3.693 ; 3.724 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[4] ; _100hz:clock|out_100hz ; 3.706 ; 3.827 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[5] ; _100hz:clock|out_100hz ; 3.863 ; 3.996 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[6] ; _100hz:clock|out_100hz ; 3.769 ; 3.884 ; Rise       ; _100hz:clock|out_100hz ;
+; hled1[*]  ; _100hz:clock|out_100hz ; 3.708 ; 3.698 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[0] ; _100hz:clock|out_100hz ; 3.710 ; 3.700 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[1] ; _100hz:clock|out_100hz ; 3.716 ; 3.730 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[2] ; _100hz:clock|out_100hz ; 3.828 ; 3.841 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[3] ; _100hz:clock|out_100hz ; 3.708 ; 3.698 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[4] ; _100hz:clock|out_100hz ; 3.715 ; 3.712 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[5] ; _100hz:clock|out_100hz ; 3.951 ; 3.929 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[6] ; _100hz:clock|out_100hz ; 3.894 ; 3.874 ; Rise       ; _100hz:clock|out_100hz ;
+; hled2[*]  ; _100hz:clock|out_100hz ; 4.058 ; 4.112 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[0] ; _100hz:clock|out_100hz ; 4.247 ; 4.181 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[1] ; _100hz:clock|out_100hz ; 4.058 ; 4.112 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[2] ; _100hz:clock|out_100hz ; 4.173 ; 4.203 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[3] ; _100hz:clock|out_100hz ; 4.222 ; 4.165 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[4] ; _100hz:clock|out_100hz ; 4.241 ; 4.211 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[5] ; _100hz:clock|out_100hz ; 4.226 ; 4.201 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[6] ; _100hz:clock|out_100hz ; 4.270 ; 4.230 ; Rise       ; _100hz:clock|out_100hz ;
+; hled3[*]  ; _100hz:clock|out_100hz ; 4.504 ; 4.493 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[0] ; _100hz:clock|out_100hz ; 4.516 ; 4.493 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[1] ; _100hz:clock|out_100hz ; 4.616 ; 4.658 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[2] ; _100hz:clock|out_100hz ; 4.504 ; 4.527 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[3] ; _100hz:clock|out_100hz ; 4.530 ; 4.505 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[4] ; _100hz:clock|out_100hz ; 4.716 ; 4.700 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[5] ; _100hz:clock|out_100hz ; 4.724 ; 4.678 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[6] ; _100hz:clock|out_100hz ; 4.704 ; 4.696 ; Rise       ; _100hz:clock|out_100hz ;
+; led[*]    ; _100hz:clock|out_100hz ; 3.605 ; 3.724 ; Rise       ; _100hz:clock|out_100hz ;
+;  led[9]   ; _100hz:clock|out_100hz ; 3.605 ; 3.724 ; Rise       ; _100hz:clock|out_100hz ;
++-----------+------------------------+-------+-------+------------+------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                   ;
++-------------------------+----------+-------+----------+---------+---------------------+
+; Clock                   ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++-------------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack        ; -4.534   ; 0.0   ; 0.0      ; 0.0     ; -3.000              ;
+;  _100hz:clock|out_100hz ; -4.534   ; 0.187 ; N/A      ; N/A     ; N/A                 ;
+;  clck50mzh              ; -1.876   ; 0.037 ; N/A      ; N/A     ; N/A                 ;
+;  pb                     ; 0.085    ; 0.032 ; N/A      ; N/A     ; N/A                 ;
+; Design-wide TNS         ; -164.862 ; 0.0   ; 0.0      ; 0.0     ; N/A                 ;
+;  _100hz:clock|out_100hz ; -133.105 ; 0.000 ; N/A      ; N/A     ; N/A                 ;
+;  clck50mzh              ; -31.757  ; 0.000 ; N/A      ; N/A     ; N/A                 ;
+;  pb                     ; 0.000    ; 0.000 ; N/A      ; N/A     ; N/A                 ;
++-------------------------+----------+-------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Setup Times                                                                              ;
++-----------+------------------------+-------+-------+------------+------------------------+
+; Data Port ; Clock Port             ; Rise  ; Fall  ; Clock Edge ; Clock Reference        ;
++-----------+------------------------+-------+-------+------------+------------------------+
+; pb        ; _100hz:clock|out_100hz ; 3.101 ; 3.256 ; Rise       ; _100hz:clock|out_100hz ;
+; pb2       ; _100hz:clock|out_100hz ; 3.693 ; 4.106 ; Rise       ; _100hz:clock|out_100hz ;
++-----------+------------------------+-------+-------+------------+------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Hold Times                                                                                 ;
++-----------+------------------------+--------+--------+------------+------------------------+
+; Data Port ; Clock Port             ; Rise   ; Fall   ; Clock Edge ; Clock Reference        ;
++-----------+------------------------+--------+--------+------------+------------------------+
+; pb        ; _100hz:clock|out_100hz ; -0.201 ; -0.693 ; Rise       ; _100hz:clock|out_100hz ;
+; pb2       ; _100hz:clock|out_100hz ; -1.742 ; -2.367 ; Rise       ; _100hz:clock|out_100hz ;
++-----------+------------------------+--------+--------+------------+------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                      ;
++-----------+------------------------+--------+--------+------------+------------------------+
+; Data Port ; Clock Port             ; Rise   ; Fall   ; Clock Edge ; Clock Reference        ;
++-----------+------------------------+--------+--------+------------+------------------------+
+; hled0[*]  ; _100hz:clock|out_100hz ; 15.912 ; 15.863 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[0] ; _100hz:clock|out_100hz ; 15.356 ; 15.322 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[1] ; _100hz:clock|out_100hz ; 15.328 ; 15.313 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[2] ; _100hz:clock|out_100hz ; 15.804 ; 15.801 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[3] ; _100hz:clock|out_100hz ; 15.843 ; 15.763 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[4] ; _100hz:clock|out_100hz ; 15.880 ; 15.801 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[5] ; _100hz:clock|out_100hz ; 15.912 ; 15.863 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[6] ; _100hz:clock|out_100hz ; 15.646 ; 15.663 ; Rise       ; _100hz:clock|out_100hz ;
+; hled1[*]  ; _100hz:clock|out_100hz ; 17.546 ; 17.632 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[0] ; _100hz:clock|out_100hz ; 17.108 ; 17.207 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[1] ; _100hz:clock|out_100hz ; 17.254 ; 17.149 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[2] ; _100hz:clock|out_100hz ; 17.437 ; 17.339 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[3] ; _100hz:clock|out_100hz ; 17.111 ; 17.212 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[4] ; _100hz:clock|out_100hz ; 17.120 ; 17.225 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[5] ; _100hz:clock|out_100hz ; 17.546 ; 17.632 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[6] ; _100hz:clock|out_100hz ; 17.434 ; 17.506 ; Rise       ; _100hz:clock|out_100hz ;
+; hled2[*]  ; _100hz:clock|out_100hz ; 17.084 ; 17.154 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[0] ; _100hz:clock|out_100hz ; 17.067 ; 17.110 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[1] ; _100hz:clock|out_100hz ; 16.899 ; 16.839 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[2] ; _100hz:clock|out_100hz ; 17.039 ; 16.960 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[3] ; _100hz:clock|out_100hz ; 17.008 ; 17.071 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[4] ; _100hz:clock|out_100hz ; 16.995 ; 17.078 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[5] ; _100hz:clock|out_100hz ; 16.972 ; 17.054 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[6] ; _100hz:clock|out_100hz ; 17.084 ; 17.154 ; Rise       ; _100hz:clock|out_100hz ;
+; hled3[*]  ; _100hz:clock|out_100hz ; 17.699 ; 17.820 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[0] ; _100hz:clock|out_100hz ; 17.343 ; 17.415 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[1] ; _100hz:clock|out_100hz ; 17.611 ; 17.597 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[2] ; _100hz:clock|out_100hz ; 17.419 ; 17.355 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[3] ; _100hz:clock|out_100hz ; 17.365 ; 17.434 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[4] ; _100hz:clock|out_100hz ; 17.697 ; 17.790 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[5] ; _100hz:clock|out_100hz ; 17.699 ; 17.820 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[6] ; _100hz:clock|out_100hz ; 17.657 ; 17.732 ; Rise       ; _100hz:clock|out_100hz ;
+; led[*]    ; _100hz:clock|out_100hz ; 6.107  ; 6.174  ; Rise       ; _100hz:clock|out_100hz ;
+;  led[9]   ; _100hz:clock|out_100hz ; 6.107  ; 6.174  ; Rise       ; _100hz:clock|out_100hz ;
++-----------+------------------------+--------+--------+------------+------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                            ;
++-----------+------------------------+-------+-------+------------+------------------------+
+; Data Port ; Clock Port             ; Rise  ; Fall  ; Clock Edge ; Clock Reference        ;
++-----------+------------------------+-------+-------+------------+------------------------+
+; hled0[*]  ; _100hz:clock|out_100hz ; 3.437 ; 3.443 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[0] ; _100hz:clock|out_100hz ; 3.441 ; 3.447 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[1] ; _100hz:clock|out_100hz ; 3.437 ; 3.443 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[2] ; _100hz:clock|out_100hz ; 3.764 ; 3.726 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[3] ; _100hz:clock|out_100hz ; 3.693 ; 3.724 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[4] ; _100hz:clock|out_100hz ; 3.706 ; 3.827 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[5] ; _100hz:clock|out_100hz ; 3.863 ; 3.996 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled0[6] ; _100hz:clock|out_100hz ; 3.769 ; 3.884 ; Rise       ; _100hz:clock|out_100hz ;
+; hled1[*]  ; _100hz:clock|out_100hz ; 3.708 ; 3.698 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[0] ; _100hz:clock|out_100hz ; 3.710 ; 3.700 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[1] ; _100hz:clock|out_100hz ; 3.716 ; 3.730 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[2] ; _100hz:clock|out_100hz ; 3.828 ; 3.841 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[3] ; _100hz:clock|out_100hz ; 3.708 ; 3.698 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[4] ; _100hz:clock|out_100hz ; 3.715 ; 3.712 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[5] ; _100hz:clock|out_100hz ; 3.951 ; 3.929 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled1[6] ; _100hz:clock|out_100hz ; 3.894 ; 3.874 ; Rise       ; _100hz:clock|out_100hz ;
+; hled2[*]  ; _100hz:clock|out_100hz ; 4.058 ; 4.112 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[0] ; _100hz:clock|out_100hz ; 4.247 ; 4.181 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[1] ; _100hz:clock|out_100hz ; 4.058 ; 4.112 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[2] ; _100hz:clock|out_100hz ; 4.173 ; 4.203 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[3] ; _100hz:clock|out_100hz ; 4.222 ; 4.165 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[4] ; _100hz:clock|out_100hz ; 4.241 ; 4.211 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[5] ; _100hz:clock|out_100hz ; 4.226 ; 4.201 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled2[6] ; _100hz:clock|out_100hz ; 4.270 ; 4.230 ; Rise       ; _100hz:clock|out_100hz ;
+; hled3[*]  ; _100hz:clock|out_100hz ; 4.504 ; 4.493 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[0] ; _100hz:clock|out_100hz ; 4.516 ; 4.493 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[1] ; _100hz:clock|out_100hz ; 4.616 ; 4.658 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[2] ; _100hz:clock|out_100hz ; 4.504 ; 4.527 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[3] ; _100hz:clock|out_100hz ; 4.530 ; 4.505 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[4] ; _100hz:clock|out_100hz ; 4.716 ; 4.700 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[5] ; _100hz:clock|out_100hz ; 4.724 ; 4.678 ; Rise       ; _100hz:clock|out_100hz ;
+;  hled3[6] ; _100hz:clock|out_100hz ; 4.704 ; 4.696 ; Rise       ; _100hz:clock|out_100hz ;
+; led[*]    ; _100hz:clock|out_100hz ; 3.605 ; 3.724 ; Rise       ; _100hz:clock|out_100hz ;
+;  led[9]   ; _100hz:clock|out_100hz ; 3.605 ; 3.724 ; Rise       ; _100hz:clock|out_100hz ;
++-----------+------------------------+-------+-------+------------+------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+
+; hled0[0]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled0[1]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled0[2]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled0[3]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled0[4]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled0[5]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled0[6]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled0[7]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled1[0]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled1[1]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled1[2]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled1[3]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled1[4]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled1[5]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled1[6]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled1[7]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled2[0]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled2[1]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled2[2]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled2[3]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled2[4]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled2[5]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled2[6]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled2[7]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled3[0]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled3[1]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled3[2]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled3[3]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled3[4]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled3[5]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled3[6]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hled3[7]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; led[0]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; led[1]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; led[2]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; led[3]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; led[4]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; led[5]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; led[6]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; led[7]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; led[8]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; led[9]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; pb                      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; clck50mzh               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; pb2                     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Corner Signal Integrity Metrics                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; hled0[0]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled0[1]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled0[2]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled0[3]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled0[4]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled0[5]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled0[6]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled0[7]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled1[0]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled1[1]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled1[2]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled1[3]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled1[4]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled1[5]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled1[6]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled1[7]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled2[0]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled2[1]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled2[2]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled2[3]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled2[4]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled2[5]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled2[6]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled2[7]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled3[0]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled3[1]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled3[2]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled3[3]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled3[4]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled3[5]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled3[6]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; hled3[7]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.08e-006 V                  ; 2.36 V              ; -0.0108 V           ; 0.122 V                              ; 0.021 V                              ; 4.5e-010 s                  ; 4.45e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.08e-006 V                 ; 2.36 V             ; -0.0108 V          ; 0.122 V                             ; 0.021 V                             ; 4.5e-010 s                 ; 4.45e-010 s                ; Yes                       ; Yes                       ;
+; led[0]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.26e-007 V                  ; 2.35 V              ; -0.011 V            ; 0.113 V                              ; 0.035 V                              ; 7.76e-010 s                 ; 8.05e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 7.26e-007 V                 ; 2.35 V             ; -0.011 V           ; 0.113 V                             ; 0.035 V                             ; 7.76e-010 s                ; 8.05e-010 s                ; Yes                       ; Yes                       ;
+; led[1]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.26e-007 V                  ; 2.35 V              ; -0.011 V            ; 0.113 V                              ; 0.035 V                              ; 7.76e-010 s                 ; 8.05e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 7.26e-007 V                 ; 2.35 V             ; -0.011 V           ; 0.113 V                             ; 0.035 V                             ; 7.76e-010 s                ; 8.05e-010 s                ; Yes                       ; Yes                       ;
+; led[2]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.26e-007 V                  ; 2.33 V              ; -0.00317 V          ; 0.162 V                              ; 0.063 V                              ; 3.54e-009 s                 ; 3.41e-009 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 7.26e-007 V                 ; 2.33 V             ; -0.00317 V         ; 0.162 V                             ; 0.063 V                             ; 3.54e-009 s                ; 3.41e-009 s                ; Yes                       ; Yes                       ;
+; led[3]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.26e-007 V                  ; 2.35 V              ; -0.011 V            ; 0.113 V                              ; 0.035 V                              ; 7.76e-010 s                 ; 8.05e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 7.26e-007 V                 ; 2.35 V             ; -0.011 V           ; 0.113 V                             ; 0.035 V                             ; 7.76e-010 s                ; 8.05e-010 s                ; Yes                       ; Yes                       ;
+; led[4]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.26e-007 V                  ; 2.35 V              ; -0.011 V            ; 0.113 V                              ; 0.035 V                              ; 7.76e-010 s                 ; 8.05e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 7.26e-007 V                 ; 2.35 V             ; -0.011 V           ; 0.113 V                             ; 0.035 V                             ; 7.76e-010 s                ; 8.05e-010 s                ; Yes                       ; Yes                       ;
+; led[5]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.26e-007 V                  ; 2.35 V              ; -0.011 V            ; 0.113 V                              ; 0.035 V                              ; 7.76e-010 s                 ; 8.05e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 7.26e-007 V                 ; 2.35 V             ; -0.011 V           ; 0.113 V                             ; 0.035 V                             ; 7.76e-010 s                ; 8.05e-010 s                ; Yes                       ; Yes                       ;
+; led[6]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.26e-007 V                  ; 2.35 V              ; -0.011 V            ; 0.113 V                              ; 0.035 V                              ; 7.76e-010 s                 ; 8.05e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 7.26e-007 V                 ; 2.35 V             ; -0.011 V           ; 0.113 V                             ; 0.035 V                             ; 7.76e-010 s                ; 8.05e-010 s                ; Yes                       ; Yes                       ;
+; led[7]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.26e-007 V                  ; 2.35 V              ; -0.011 V            ; 0.113 V                              ; 0.035 V                              ; 7.76e-010 s                 ; 8.05e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 7.26e-007 V                 ; 2.35 V             ; -0.011 V           ; 0.113 V                             ; 0.035 V                             ; 7.76e-010 s                ; 8.05e-010 s                ; Yes                       ; Yes                       ;
+; led[8]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.26e-007 V                  ; 2.35 V              ; -0.011 V            ; 0.113 V                              ; 0.035 V                              ; 7.76e-010 s                 ; 8.05e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 7.26e-007 V                 ; 2.35 V             ; -0.011 V           ; 0.113 V                             ; 0.035 V                             ; 7.76e-010 s                ; 8.05e-010 s                ; Yes                       ; Yes                       ;
+; led[9]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.26e-007 V                  ; 2.35 V              ; -0.011 V            ; 0.113 V                              ; 0.035 V                              ; 7.76e-010 s                 ; 8.05e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 7.26e-007 V                 ; 2.35 V             ; -0.011 V           ; 0.113 V                             ; 0.035 V                             ; 7.76e-010 s                ; 8.05e-010 s                ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.68e-007 V                  ; 2.35 V              ; -0.0132 V           ; 0.2 V                                ; 0.027 V                              ; 5.26e-010 s                 ; 4.81e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 5.68e-007 V                 ; 2.35 V             ; -0.0132 V          ; 0.2 V                               ; 0.027 V                             ; 5.26e-010 s                ; 4.81e-010 s                ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 9.36e-007 V                  ; 2.35 V              ; -0.00483 V          ; 0.18 V                               ; 0.019 V                              ; 7.23e-010 s                 ; 9.82e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 9.36e-007 V                 ; 2.35 V             ; -0.00483 V         ; 0.18 V                              ; 0.019 V                             ; 7.23e-010 s                ; 9.82e-010 s                ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Corner Signal Integrity Metrics                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; hled0[0]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled0[1]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled0[2]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled0[3]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled0[4]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled0[5]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled0[6]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled0[7]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled1[0]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled1[1]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled1[2]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled1[3]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled1[4]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled1[5]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled1[6]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled1[7]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled2[0]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled2[1]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled2[2]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled2[3]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled2[4]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled2[5]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled2[6]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled2[7]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled3[0]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled3[1]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled3[2]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled3[3]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled3[4]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled3[5]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled3[6]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; hled3[7]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0567 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0567 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; led[0]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.78e-008 V                  ; 2.71 V              ; -0.0352 V           ; 0.253 V                              ; 0.068 V                              ; 4.96e-010 s                 ; 5.19e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.78e-008 V                 ; 2.71 V             ; -0.0352 V          ; 0.253 V                             ; 0.068 V                             ; 4.96e-010 s                ; 5.19e-010 s                ; No                        ; Yes                       ;
+; led[1]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.78e-008 V                  ; 2.71 V              ; -0.0352 V           ; 0.253 V                              ; 0.068 V                              ; 4.96e-010 s                 ; 5.19e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.78e-008 V                 ; 2.71 V             ; -0.0352 V          ; 0.253 V                             ; 0.068 V                             ; 4.96e-010 s                ; 5.19e-010 s                ; No                        ; Yes                       ;
+; led[2]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.78e-008 V                  ; 2.64 V              ; -0.0109 V           ; 0.244 V                              ; 0.16 V                               ; 2.42e-009 s                 ; 2.37e-009 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.78e-008 V                 ; 2.64 V             ; -0.0109 V          ; 0.244 V                             ; 0.16 V                              ; 2.42e-009 s                ; 2.37e-009 s                ; No                        ; Yes                       ;
+; led[3]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.78e-008 V                  ; 2.71 V              ; -0.0352 V           ; 0.253 V                              ; 0.068 V                              ; 4.96e-010 s                 ; 5.19e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.78e-008 V                 ; 2.71 V             ; -0.0352 V          ; 0.253 V                             ; 0.068 V                             ; 4.96e-010 s                ; 5.19e-010 s                ; No                        ; Yes                       ;
+; led[4]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.78e-008 V                  ; 2.71 V              ; -0.0352 V           ; 0.253 V                              ; 0.068 V                              ; 4.96e-010 s                 ; 5.19e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.78e-008 V                 ; 2.71 V             ; -0.0352 V          ; 0.253 V                             ; 0.068 V                             ; 4.96e-010 s                ; 5.19e-010 s                ; No                        ; Yes                       ;
+; led[5]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.78e-008 V                  ; 2.71 V              ; -0.0352 V           ; 0.253 V                              ; 0.068 V                              ; 4.96e-010 s                 ; 5.19e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.78e-008 V                 ; 2.71 V             ; -0.0352 V          ; 0.253 V                             ; 0.068 V                             ; 4.96e-010 s                ; 5.19e-010 s                ; No                        ; Yes                       ;
+; led[6]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.78e-008 V                  ; 2.71 V              ; -0.0352 V           ; 0.253 V                              ; 0.068 V                              ; 4.96e-010 s                 ; 5.19e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.78e-008 V                 ; 2.71 V             ; -0.0352 V          ; 0.253 V                             ; 0.068 V                             ; 4.96e-010 s                ; 5.19e-010 s                ; No                        ; Yes                       ;
+; led[7]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.78e-008 V                  ; 2.71 V              ; -0.0352 V           ; 0.253 V                              ; 0.068 V                              ; 4.96e-010 s                 ; 5.19e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.78e-008 V                 ; 2.71 V             ; -0.0352 V          ; 0.253 V                             ; 0.068 V                             ; 4.96e-010 s                ; 5.19e-010 s                ; No                        ; Yes                       ;
+; led[8]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.78e-008 V                  ; 2.71 V              ; -0.0352 V           ; 0.253 V                              ; 0.068 V                              ; 4.96e-010 s                 ; 5.19e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.78e-008 V                 ; 2.71 V             ; -0.0352 V          ; 0.253 V                             ; 0.068 V                             ; 4.96e-010 s                ; 5.19e-010 s                ; No                        ; Yes                       ;
+; led[9]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.78e-008 V                  ; 2.71 V              ; -0.0352 V           ; 0.253 V                              ; 0.068 V                              ; 4.96e-010 s                 ; 5.19e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.78e-008 V                 ; 2.71 V             ; -0.0352 V          ; 0.253 V                             ; 0.068 V                             ; 4.96e-010 s                ; 5.19e-010 s                ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.19e-008 V                  ; 2.72 V              ; -0.0746 V           ; 0.28 V                               ; 0.169 V                              ; 3.1e-010 s                  ; 3.01e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.19e-008 V                 ; 2.72 V             ; -0.0746 V          ; 0.28 V                              ; 0.169 V                             ; 3.1e-010 s                 ; 3.01e-010 s                ; No                        ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.53e-008 V                  ; 2.7 V               ; -0.021 V            ; 0.204 V                              ; 0.048 V                              ; 4.85e-010 s                 ; 6.74e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 3.53e-008 V                 ; 2.7 V              ; -0.021 V           ; 0.204 V                             ; 0.048 V                             ; 4.85e-010 s                ; 6.74e-010 s                ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++---------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                             ;
++------------------------+------------------------+----------+----------+----------+----------+
+; From Clock             ; To Clock               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------+------------------------+----------+----------+----------+----------+
+; _100hz:clock|out_100hz ; _100hz:clock|out_100hz ; 1683     ; 0        ; 0        ; 0        ;
+; pb                     ; _100hz:clock|out_100hz ; 514      ; 219      ; 0        ; 0        ;
+; _100hz:clock|out_100hz ; clck50mzh              ; 1        ; 1        ; 0        ; 0        ;
+; clck50mzh              ; clck50mzh              ; 513      ; 0        ; 0        ; 0        ;
+; _100hz:clock|out_100hz ; pb                     ; 10       ; 0        ; 0        ; 0        ;
++------------------------+------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                              ;
++------------------------+------------------------+----------+----------+----------+----------+
+; From Clock             ; To Clock               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------+------------------------+----------+----------+----------+----------+
+; _100hz:clock|out_100hz ; _100hz:clock|out_100hz ; 1683     ; 0        ; 0        ; 0        ;
+; pb                     ; _100hz:clock|out_100hz ; 514      ; 219      ; 0        ; 0        ;
+; _100hz:clock|out_100hz ; clck50mzh              ; 1        ; 1        ; 0        ; 0        ;
+; clck50mzh              ; clck50mzh              ; 513      ; 0        ; 0        ; 0        ;
+; _100hz:clock|out_100hz ; pb                     ; 10       ; 0        ; 0        ; 0        ;
++------------------------+------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design.
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design.
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 1     ; 1    ;
+; Unconstrained Output Ports      ; 29    ; 29   ;
+; Unconstrained Output Port Paths ; 351   ; 351  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II TimeQuest Timing Analyzer
+    Info: Version 9.0 Build 132 02/25/2009 SJ Web Edition
+    Info: Processing started: Thu May 05 03:05:52 2016
+Info: Command: quartus_sta Project3 -c Project3
+Info: qsta_default_script.tcl version: #3
+Info: Core supply voltage is 1.2V
+Info: Low junction temperature is 0 degrees C
+Info: High junction temperature is 85 degrees C
+Critical Warning: Synopsys Design Constraints File file not found: 'Project3.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info: No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info: Deriving Clocks
+    Info: create_clock -period 1.000 -name _100hz:clock|out_100hz _100hz:clock|out_100hz
+    Info: create_clock -period 1.000 -name clck50mzh clck50mzh
+    Info: create_clock -period 1.000 -name pb pb
+Critical Warning: The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
+    Critical Warning: From _100hz:clock|out_100hz (Rise) to _100hz:clock|out_100hz (Rise) (setup and hold)
+    Critical Warning: From _100hz:clock|out_100hz (Fall) to _100hz:clock|out_100hz (Rise) (setup and hold)
+    Critical Warning: From clck50mzh (Rise) to _100hz:clock|out_100hz (Rise) (setup and hold)
+    Critical Warning: From pb (Rise) to _100hz:clock|out_100hz (Rise) (setup and hold)
+    Critical Warning: From pb (Fall) to _100hz:clock|out_100hz (Rise) (setup and hold)
+    Critical Warning: From _100hz:clock|out_100hz (Rise) to _100hz:clock|out_100hz (Fall) (setup and hold)
+    Critical Warning: From _100hz:clock|out_100hz (Fall) to _100hz:clock|out_100hz (Fall) (setup and hold)
+    Critical Warning: From clck50mzh (Rise) to _100hz:clock|out_100hz (Fall) (setup and hold)
+    Critical Warning: From _100hz:clock|out_100hz (Rise) to clck50mzh (Rise) (setup and hold)
+    Critical Warning: From _100hz:clock|out_100hz (Fall) to clck50mzh (Rise) (setup and hold)
+    Critical Warning: From clck50mzh (Rise) to clck50mzh (Rise) (setup and hold)
+    Critical Warning: From _100hz:clock|out_100hz (Rise) to pb (Rise) (setup and hold)
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning: Timing requirements not met
+Info: Worst-case setup slack is -4.534
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -4.534      -133.105 _100hz:clock|out_100hz 
+    Info:    -1.876       -31.757 clck50mzh 
+    Info:     0.085         0.000 pb 
+Info: Worst-case hold slack is 0.100
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:     0.100         0.000 clck50mzh 
+    Info:     0.132         0.000 pb 
+    Info:     0.360         0.000 _100hz:clock|out_100hz 
+Info: No recovery paths to report
+Info: No removal paths to report
+Critical Warning: Found minimum pulse width or period violations. See Report Minimum Pulse Width for details.
+Info: The Metastability Analysis global option is set to OFF.
+Info: No synchronizer chains to report.
+Info: Analyzing Slow 1200mV 0C Model
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Critical Warning: The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
+    Critical Warning: From _100hz:clock|out_100hz (Rise) to _100hz:clock|out_100hz (Rise) (setup and hold)
+    Critical Warning: From _100hz:clock|out_100hz (Fall) to _100hz:clock|out_100hz (Rise) (setup and hold)
+    Critical Warning: From clck50mzh (Rise) to _100hz:clock|out_100hz (Rise) (setup and hold)
+    Critical Warning: From pb (Rise) to _100hz:clock|out_100hz (Rise) (setup and hold)
+    Critical Warning: From pb (Fall) to _100hz:clock|out_100hz (Rise) (setup and hold)
+    Critical Warning: From _100hz:clock|out_100hz (Rise) to _100hz:clock|out_100hz (Fall) (setup and hold)
+    Critical Warning: From _100hz:clock|out_100hz (Fall) to _100hz:clock|out_100hz (Fall) (setup and hold)
+    Critical Warning: From clck50mzh (Rise) to _100hz:clock|out_100hz (Fall) (setup and hold)
+    Critical Warning: From _100hz:clock|out_100hz (Rise) to clck50mzh (Rise) (setup and hold)
+    Critical Warning: From _100hz:clock|out_100hz (Fall) to clck50mzh (Rise) (setup and hold)
+    Critical Warning: From clck50mzh (Rise) to clck50mzh (Rise) (setup and hold)
+    Critical Warning: From _100hz:clock|out_100hz (Rise) to pb (Rise) (setup and hold)
+Critical Warning: Timing requirements not met
+Info: Worst-case setup slack is -4.065
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -4.065      -115.371 _100hz:clock|out_100hz 
+    Info:    -1.623       -27.094 clck50mzh 
+    Info:     0.251         0.000 pb 
+Info: Worst-case hold slack is 0.032
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:     0.032         0.000 pb 
+    Info:     0.072         0.000 clck50mzh 
+    Info:     0.311         0.000 _100hz:clock|out_100hz 
+Info: No recovery paths to report
+Info: No removal paths to report
+Critical Warning: Found minimum pulse width or period violations. See Report Minimum Pulse Width for details.
+Info: The Metastability Analysis global option is set to OFF.
+Info: No synchronizer chains to report.
+Info: Analyzing Fast 1200mV 0C Model
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Critical Warning: The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
+    Critical Warning: From _100hz:clock|out_100hz (Rise) to _100hz:clock|out_100hz (Rise) (setup and hold)
+    Critical Warning: From _100hz:clock|out_100hz (Fall) to _100hz:clock|out_100hz (Rise) (setup and hold)
+    Critical Warning: From clck50mzh (Rise) to _100hz:clock|out_100hz (Rise) (setup and hold)
+    Critical Warning: From pb (Rise) to _100hz:clock|out_100hz (Rise) (setup and hold)
+    Critical Warning: From pb (Fall) to _100hz:clock|out_100hz (Rise) (setup and hold)
+    Critical Warning: From _100hz:clock|out_100hz (Rise) to _100hz:clock|out_100hz (Fall) (setup and hold)
+    Critical Warning: From _100hz:clock|out_100hz (Fall) to _100hz:clock|out_100hz (Fall) (setup and hold)
+    Critical Warning: From clck50mzh (Rise) to _100hz:clock|out_100hz (Fall) (setup and hold)
+    Critical Warning: From _100hz:clock|out_100hz (Rise) to clck50mzh (Rise) (setup and hold)
+    Critical Warning: From _100hz:clock|out_100hz (Fall) to clck50mzh (Rise) (setup and hold)
+    Critical Warning: From clck50mzh (Rise) to clck50mzh (Rise) (setup and hold)
+    Critical Warning: From _100hz:clock|out_100hz (Rise) to pb (Rise) (setup and hold)
+Critical Warning: Timing requirements not met
+Info: Worst-case setup slack is -2.122
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -2.122       -57.237 _100hz:clock|out_100hz 
+    Info:    -0.589        -8.789 clck50mzh 
+    Info:     0.399         0.000 pb 
+Info: Worst-case hold slack is 0.037
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:     0.037         0.000 clck50mzh 
+    Info:     0.040         0.000 pb 
+    Info:     0.187         0.000 _100hz:clock|out_100hz 
+Info: No recovery paths to report
+Info: No removal paths to report
+Critical Warning: Found minimum pulse width or period violations. See Report Minimum Pulse Width for details.
+Info: The Metastability Analysis global option is set to OFF.
+Info: No synchronizer chains to report.
+Info: Design is not fully constrained for setup requirements
+Info: Design is not fully constrained for hold requirements
+Info: Quartus II TimeQuest Timing Analyzer was successful. 0 errors, 46 warnings
+    Info: Peak virtual memory: 257 megabytes
+    Info: Processing ended: Thu May 05 03:05:53 2016
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
+
+

@@ -1,0 +1,12 @@
+// Pseudo - random number generator 10 bit
+// 
+//
+module random(d,clk);
+  input clk;
+  output reg [9:0] d=5;
+    
+always @(posedge clk) begin
+    d <= { d[9:0], d[9] ^ d[6] };
+end
+endmodule
+

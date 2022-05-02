@@ -1,0 +1,283 @@
+Version 9.0 Build 132 02/25/2009 SJ Web Edition
+10
+767
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+altsyn.lmf
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+random
+# storage
+db|Project3.(2).cnf
+db|Project3.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+Random.v
+5ecb86433f92e6ad25da315babe087d4
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+random:ran
+}
+# lmf
+..|..|..|..|..|..|altera|90|quartus|lmf|altsyn.lmf
+32a512b4b4798678355b65114155d5b6
+# macro_sequence
+
+# end
+# entity
+segleddec
+# storage
+db|Project3.(5).cnf
+db|Project3.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+segleddec.v
+4554c885881a0fc695712af648f1ec
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+segleddec:seg0
+segleddec:seg1
+segleddec:seg2
+segleddec:seg3
+}
+# lmf
+..|..|..|..|..|..|altera|90|quartus|lmf|altsyn.lmf
+32a512b4b4798678355b65114155d5b6
+# macro_sequence
+
+# end
+# entity
+bin2bcd
+# storage
+db|Project3.(3).cnf
+db|Project3.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+bin2bcd.v
+d790c2fd17486891bb2863613187b76e
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+bin2bcd:a
+}
+# lmf
+..|..|..|..|..|..|altera|90|quartus|lmf|altsyn.lmf
+32a512b4b4798678355b65114155d5b6
+# macro_sequence
+
+# end
+# entity
+add3ifbig5
+# storage
+db|Project3.(4).cnf
+db|Project3.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+add3ifbig5.v
+4813ad66371f3eb8cbd9ba27bf62c2fc
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+bin2bcd:a|add3ifbig5:A1
+bin2bcd:a|add3ifbig5:A2
+bin2bcd:a|add3ifbig5:A3
+bin2bcd:a|add3ifbig5:A4
+bin2bcd:a|add3ifbig5:A5
+bin2bcd:a|add3ifbig5:A6
+bin2bcd:a|add3ifbig5:A7
+bin2bcd:a|add3ifbig5:A8
+bin2bcd:a|add3ifbig5:A9
+bin2bcd:a|add3ifbig5:A10
+bin2bcd:a|add3ifbig5:A11
+bin2bcd:a|add3ifbig5:A12
+bin2bcd:a|add3ifbig5:A13
+bin2bcd:a|add3ifbig5:A14
+bin2bcd:a|add3ifbig5:A15
+bin2bcd:a|add3ifbig5:A16
+bin2bcd:a|add3ifbig5:A17
+bin2bcd:a|add3ifbig5:A18
+bin2bcd:a|add3ifbig5:A19
+bin2bcd:a|add3ifbig5:A20
+bin2bcd:a|add3ifbig5:A21
+bin2bcd:a|add3ifbig5:A22
+bin2bcd:a|add3ifbig5:A23
+bin2bcd:a|add3ifbig5:A24
+bin2bcd:a|add3ifbig5:A25
+}
+# lmf
+..|..|..|..|..|..|altera|90|quartus|lmf|altsyn.lmf
+32a512b4b4798678355b65114155d5b6
+# macro_sequence
+
+# end
+# entity
+Project3
+# storage
+db|Project3.(0).cnf
+db|Project3.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+Project3.v
+e41dc118262617ca36c87857c55357a8
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
+}
+# lmf
+..|..|..|..|..|..|altera|90|quartus|lmf|altsyn.lmf
+32a512b4b4798678355b65114155d5b6
+# macro_sequence
+
+# end
+# entity
+_100hz
+# storage
+db|Project3.(1).cnf
+db|Project3.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+FrequencyDivider.v
+77bcd806266f0b95a27e0a9316547a
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+_100hz:clock
+}
+# lmf
+..|..|..|..|..|..|altera|90|quartus|lmf|altsyn.lmf
+32a512b4b4798678355b65114155d5b6
+# macro_sequence
+
+# end
+# complete
+

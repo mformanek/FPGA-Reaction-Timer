@@ -1,0 +1,65 @@
+<internal_error>
+	<executable>quartus.exe</executable>
+	<sub_system>unknown</sub_system>
+	<file>unknown</file>
+	<line>0</line>
+	<callstack>
+	0x01bb0a01: RESR_TMW + 0x20a01 (??1TMW_WND@@UAE@XZ + 0x4b1)
+	0x5081c0b4: mfc90 + 0x5c0b4
+	0x76bd6e8d: USER32 + 0x16e8d (CallWindowProcW + 0x54d)
+	0x76bd6c95: USER32 + 0x16c95 (CallWindowProcW + 0x355)
+	0x76bd6b17: USER32 + 0x16b17 (CallWindowProcW + 0x1d7)
+	0x76bd6e8d: USER32 + 0x16e8d (CallWindowProcW + 0x54d)
+	0x5081ba48: mfc90 + 0x5ba48
+	0x5081a63c: mfc90 + 0x5a63c
+	0x5081a8c8: mfc90 + 0x5a8c8
+	0x508185b2: mfc90 + 0x585b2
+	0x76bf84f2: USER32 + 0x384f2 (SetManipulationInputTarget + 0x52)
+	0x76bd6c3f: USER32 + 0x16c3f (CallWindowProcW + 0x2ff)
+	0x76bd6540: USER32 + 0x16540 (DispatchMessageW + 0x250)
+	0x76be9a59: USER32 + 0x29a59 (IsDialogMessage + 0x239)
+	0x76be9803: USER32 + 0x29803 (DialogBoxIndirectParamAorW + 0x143)
+	0x76c41665: USER32 + 0x81665 (SoftModalMessageBox + 0xea5)
+	0x76c40539: USER32 + 0x80539 (MessageBoxW + 0x2b9)
+	0x76c4025b: USER32 + 0x8025b (MessageBoxTimeoutW + 0x6b)
+	0x76c401ba: USER32 + 0x801ba (MessageBoxTimeoutA + 0x7a)
+	0x76c3ff9a: USER32 + 0x7ff9a (MessageBoxExA + 0x1a)
+	0x76c3ff67: USER32 + 0x7ff67 (MessageBoxA + 0x17)
+	0x5081fdda: mfc90 + 0x5fdda
+	0x5085cc9e: mfc90 + 0x9cc9e
+	0x5085cb72: mfc90 + 0x9cb72
+	0x01b00e80: RESR_MSW + 0x10e80 (?prompt_display@MSW_DISPLAY@@UAIHPAVMSG_PROMPT@@@Z + 0xf0)
+	0x76bd4be8: USER32 + 0x14be8 (ClientToScreen + 0x338)
+	0x7447f9f7: COMCTL32 + 0x4f9f7 (_TrackMouseEvent + 0x1d387)
+	0x50819165: mfc90 + 0x59165
+	0x50818699: mfc90 + 0x58699
+	0x5081a783: mfc90 + 0x5a783
+	0x5081a8c8: mfc90 + 0x5a8c8
+	0x508185b2: mfc90 + 0x585b2
+	0x76bf84f2: USER32 + 0x384f2 (SetManipulationInputTarget + 0x52)
+	0x76bd6c3f: USER32 + 0x16c3f (CallWindowProcW + 0x2ff)
+	0x76bedd07: USER32 + 0x2dd07 (CallWindowProcA + 0x97)
+	0x0040ac33: quartus + 0xac33
+	0x00413720: quartus + 0x13720 (Pjm_Uninit + 0x44e0)
+	0x00416de0: quartus + 0x16de0 (Pjm_Uninit + 0x7ba0)
+	0x76bf84f2: USER32 + 0x384f2 (SetManipulationInputTarget + 0x52)
+	0x76bd6c3f: USER32 + 0x16c3f (CallWindowProcW + 0x2ff)
+	0x76bd6540: USER32 + 0x16540 (DispatchMessageW + 0x250)
+	0x76bf6f2f: USER32 + 0x36f2f (DispatchMessageA + 0xf)
+	0x5085a866: mfc90 + 0x9a866
+	0x01101968: ccl_thr + 0x1968 (thr_thread_var_destroy + 0x28)
+	0x508271e7: mfc90 + 0x671e7
+	0x0044f42e: quartus + 0x4f42e (Pjm_Uninit + 0x401ee)
+	0x775238f3: KERNEL32 + 0x138f3 (BaseThreadInitThunk + 0x23)
+	0x77ae5de2: ntdll + 0x65de2 (RtlUnicodeStringToInteger + 0x252)
+	0x77ae5dad: ntdll + 0x65dad (RtlUnicodeStringToInteger + 0x21d)
+	0xffffffffffffffff:
+	</callstack>
+	<error>Current editor: RPW, STED, STED, STED</error>
+	<date>Fri Apr 29 13:38:43 2016</date>
+	<version>Quartus II Version 9.0 Build 132 02/25/2009 SJ Web Edition</version>
+	<full_error>Access Violation at 0X01BB0A01
+Current editor: RPW, STED, STED, STED
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Web Edition </full_error>
+</internal_error>
+

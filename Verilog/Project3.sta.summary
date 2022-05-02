@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup '_100hz:clock|out_100hz'
+Slack : -4.534
+TNS   : -133.105
+
+Type  : Slow 1200mV 85C Model Setup 'clck50mzh'
+Slack : -1.876
+TNS   : -31.757
+
+Type  : Slow 1200mV 85C Model Setup 'pb'
+Slack : 0.085
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clck50mzh'
+Slack : 0.100
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'pb'
+Slack : 0.132
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold '_100hz:clock|out_100hz'
+Slack : 0.360
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup '_100hz:clock|out_100hz'
+Slack : -4.065
+TNS   : -115.371
+
+Type  : Slow 1200mV 0C Model Setup 'clck50mzh'
+Slack : -1.623
+TNS   : -27.094
+
+Type  : Slow 1200mV 0C Model Setup 'pb'
+Slack : 0.251
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'pb'
+Slack : 0.032
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clck50mzh'
+Slack : 0.072
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold '_100hz:clock|out_100hz'
+Slack : 0.311
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup '_100hz:clock|out_100hz'
+Slack : -2.122
+TNS   : -57.237
+
+Type  : Fast 1200mV 0C Model Setup 'clck50mzh'
+Slack : -0.589
+TNS   : -8.789
+
+Type  : Fast 1200mV 0C Model Setup 'pb'
+Slack : 0.399
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clck50mzh'
+Slack : 0.037
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'pb'
+Slack : 0.040
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold '_100hz:clock|out_100hz'
+Slack : 0.187
+TNS   : 0.000
+
+------------------------------------------------------------
